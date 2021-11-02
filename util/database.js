@@ -4,14 +4,14 @@ const pool = mySql.createPool({
   host: "localhost",
   user: "root",
   database: "node-complete",
-  password: "dinesh1784",
+  password: "passowrd",
 });
 
 module.exports = pool.promise();
 
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("node-complete", "root", "dinesh1784", {
+const sequelize = new Sequelize("node-complete", "root", "password", {
   dialect: "mysql",
   host: "localhost",
 });
@@ -26,7 +26,7 @@ let _db;
 
 const mongoConnect = (callback) => {
   MongoClient.connect(
-    "mongodb+srv://admin:dinesh1784@cluster0.x8lve.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    MONGODURL
   )
     .then((client) => {
       console.log("Connected!");
